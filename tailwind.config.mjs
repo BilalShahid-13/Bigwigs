@@ -10,8 +10,24 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        btnColor: "var(--btnColor)",
+      },
+      fontFamily: {
+        playfair: ['"Playfair Display"', "serif"],
+        montserrat: ['"Montserrat"', "sans-serif"],
+      },
+      transition: {
+        ease: "var(--transition)",
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        ".transition-standard": {
+          transition: "all 0.2s linear",
+        },
+      });
+    },
+  ],
 };
