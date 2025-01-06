@@ -29,7 +29,7 @@ export const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    NavbarAnim(leftRef, centerRef, rightRef, mobileView);
+    NavbarAnim(leftRef, centerRef, rightRef);
   }, []);
 
   useEffect(() => {
@@ -70,7 +70,7 @@ export const Navbar = () => {
 
   const MiddleNavbar = () => (
     <ul className="flex flex-row justify-center items-center
-     gap-7 font-medium max-sm:flex-col max-sm:w-full overflow-hidden h-0"
+     gap-7 font-medium max-sm:flex-col max-sm:w-full overflow-hidden max-sm:h-0"
       ref={centerRef}>
       {NavbarItems.map((Item, index) => (
         <div
