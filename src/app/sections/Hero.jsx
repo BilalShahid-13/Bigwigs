@@ -1,4 +1,7 @@
+"use client";
 import Image from 'next/image';
+import { useEffect, useRef } from 'react'
+import { HeroAnim } from '../animation/HeroAnim';
 
 export const metadata = {
   title: 'Bigwigs English Academy',
@@ -6,53 +9,80 @@ export const metadata = {
 };
 
 const Hero = () => {
+  const headlineRef = useRef(null);
+  const subheadlineRef = useRef(null);
+  const highlightedRef = useRef(null)
+  const imageRef = useRef(null);
+  const buttonRef = useRef(null);
+  const descriptionRef = useRef(null)
+
+  useEffect(() => {
+    HeroAnim(headlineRef, subheadlineRef, highlightedRef, imageRef, buttonRef, descriptionRef)
+  }, [])
   return (
-    <section className="flex flex-row justify-center items-center gap-[25%]">
+    <section className="flex flex-row max-sm:flex-col-reverse justify-center items-center gap-[25%]">
+      {/* left */}
       <div className="flex flex-col justify-start items-start gap-4
-       w-[40%]">
-        <h1 className="text-4xl font-semibold font-playfair leading-tight">
-          Unlock Your Potential with{' '}
-          <span className="text-btnColor font-bold">Bigwigs</span> English
+       w-[40%] max-sm:w-full max-sm:justify-center max-sm:items-center">
+        <h1 className="text-4xl max-sm:text-xl font-semibold font-playfair leading-tight"
+          ref={headlineRef}>
+          Unlock Your Potential with
+          <span className="text-btnColor font-bold" > &nbsp; Bigwigs</span> English
           Academy
         </h1>
-        <h2 className="text-xl font-medium font-playfair">
+        <h2 className="text-xl max-sm:text-base font-medium
+        max-sm:font-normal font-playfair" ref={subheadlineRef}>
           Master &nbsp;
-          <span className="bg-indigo-500 text-white text-lg px-2 py-1 rounded-sm">
+          <span
+            className="bg-indigo-500 text-white
+            text-lg px-2 py-1 rounded-sm inline-block max-sm:text-xs"
+            ref={highlightedRef}
+          >
             Spoken English, Business English, IELTS, and PTE
-          </span>{' '}
+          </span>
           &nbsp; with Expert Trainers
         </h2>
-        <p className="font-montserrat">
+        <p className="font-montserrat" ref={descriptionRef}>
           Join thousands of students who’ve transformed their English skills
           and achieved their dreams with Bigwigs.
         </p>
-        <div className="flex flex-row gap-2 font-montserrat">
+        <div className="flex flex-row max-sm:flex-col max-sm:justify-center
+        max-sm:items-center gap-2 font-montserrat max-sm:gap-3" ref={buttonRef}>
           <button
-            className="bg-btnColor text-white py-2 px-4 rounded-md hover:bg-[#3731e1] transition-all ease-in duration-150"
+            className="bg-btnColor text-white py-2 px-4
+            rounded-md hover:bg-[#3731e1] transition-all ease-in duration-150
+            max-sm:text-sm max-sm:w-full"
             aria-label="Enroll Now"
           >
             Enroll Now
           </button>
           <button
-            className="bg-[#efeef3] text-[#b097e8] py-2 px-4 rounded-md hover:bg-[#b097e8] hover:text-white transition-all ease-in duration-150"
+            className="bg-[#efeef3] text-[#b097e8] py-2 px-4
+            rounded-md hover:bg-[#b097e8] hover:text-white
+            transition-all ease-in duration-150
+            max-sm:text-sm max-sm:w-full"
             aria-label="Book a Free Demo"
           >
             Book a Free Demo
           </button>
         </div>
       </div>
-      <div className="relative w-[400px] h-[400px] rounded-full
-        bg-indigo-500 justify-center items-center text-center flex">
+      {/* right */}
+      <div className="relative w-[400px] h-[400px] max-sm:w-32 max-sm:h-32 rounded-full
+        bg-indigo-500 justify-center items-center text-center flex"
+        ref={imageRef}>
         <Image
           src={'/Hero/image2.png'}
           width={400}
-          priority={true}
           height={400}
-          className="object-cover"
+          priority={true}
+          className="object-cover w-full
+          "
           alt="Students learning English at Bigwigs English Academy"
         />
+
       </div>
-    </section>
+    </section >
   );
 };
 

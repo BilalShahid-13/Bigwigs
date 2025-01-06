@@ -2,7 +2,6 @@ import { GrMicrophone } from "react-icons/gr";
 import { HiOutlinePresentationChartLine } from "react-icons/hi2";
 import { LuGraduationCap } from "react-icons/lu";
 import { TbChecklist } from "react-icons/tb";
-
 const Categories_Content = [
   {
     title: "Master Spoken English",
@@ -58,6 +57,22 @@ const Categories_Content = [
   },
 ];
 
+/*
+------------------------------------------------------------
+| [Logo]                                                   |
+| Home | About Us | Courses ▼ | Testimonials | Blog | Contact Us |
+| [Enroll Now] [Book a Free Demo] [Social Media Icons]      |
+------------------------------------------------------------ */
+import { AiOutlineHome } from "react-icons/ai";
+import { LiaInfoCircleSolid } from "react-icons/lia";
+import { TiStarOutline } from "react-icons/ti";
+import { HiOutlinePhone } from "react-icons/hi";
+const NavbarItems = [
+  { icon: AiOutlineHome, name: "Home", link: "/" },
+  { icon: LiaInfoCircleSolid, name: "About Us", link: "/about" },
+  { icon: LuGraduationCap, name: "Courses", link: "/courses" },
+  { icon: TiStarOutline, name: "Testimonals", link: "/testimonals" },
+  { icon: HiOutlinePhone, name: "Contact Us", link: "/contact" },
+];
 
-
-export { Categories_Content };
+export { Categories_Content, NavbarItems };
