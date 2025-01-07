@@ -1,12 +1,13 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import { NavbarItems } from "../lib/constant";
+import { NavbarItems } from "../app/lib/constant";
 import Link from "next/link";
 import Image from "next/image";
-import { NavbarAnim } from "../animation/NavbarAnim";
+import { NavbarAnim } from "../app/animation/NavbarAnim";
 import { useRouter } from "next/navigation";
 import { RxHamburgerMenu } from "react-icons/rx";
 import gsap from "gsap";
+import { ModeToggle } from "./ModeToggle";
 
 export const Navbar = () => {
   const [onMouseEnter, setOnMouseEnter] = useState(null);
@@ -57,10 +58,10 @@ export const Navbar = () => {
             y: '-100%',
             duration: 0.3
           })
-          // .to(centerRef.current, {
-          //   height: '0',
-          //   duration: 0.2
-          // })
+        // .to(centerRef.current, {
+        //   height: '0',
+        //   duration: 0.2
+        // })
 
       }
 
@@ -122,10 +123,13 @@ export const Navbar = () => {
             <h6 className="text-2xl font-semibold font-playfair">Bigwigs</h6>
           </div>
           {mobileView &&
-            <RxHamburgerMenu
-              className='text-3xl'
-              onClick={() => setToggleHamburger(!toggleHamburger)}
-            />
+            <div className="flex flex-row-reverse justify-center items-center gap-2">
+              <RxHamburgerMenu
+                className='text-3xl'
+                onClick={() => setToggleHamburger(!toggleHamburger)}
+              />
+              <ModeToggle />
+            </div >
           }
         </div>
 
@@ -134,17 +138,21 @@ export const Navbar = () => {
         {/* {!mobileView ? (
         ) : (
           <MobileNavbar />
+
         )} */}
 
         {/* Right */}
         {!mobileView && (
+
           <div className="flex flex-row justify-center items-center gap-3" ref={rightRef}>
+            <ModeToggle />
             <button className="hover:bg-violet-500 border-2 transition-standard active:bg-violet-600 border-violet-400 rounded-md px-3 py-1 hover:text-slate-200">
               Enroll Now
             </button>
             <button className="bg-indigo-500 hover:bg-indigo-600 border-2 text-white transition-standard active:bg-indigo-700 active:border-indigo-800 border-indigo-400 rounded-md px-3 py-1 hover:text-slate-200">
               Book a Free Demo
             </button>
+
           </div>
         )}
       </nav>

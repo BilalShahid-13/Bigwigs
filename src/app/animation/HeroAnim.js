@@ -4,7 +4,6 @@ export const HeroAnim = (
   headlineRef,
   subheadlineRef,
   highlightedRef,
-  imageRef,
   buttonRef,
   descriptionRef
 ) => {
@@ -12,7 +11,6 @@ export const HeroAnim = (
     headlineRef.current &&
     subheadlineRef.current &&
     highlightedRef.current &&
-    imageRef.current &&
     buttonRef.current &&
     descriptionRef.current
   ) {
@@ -48,10 +46,11 @@ export const HeroAnim = (
       // Expand background of highlighted text and text fade-in
       .fromTo(
         highlightedRef.current,
-        { width: "0%" },
+        { width: "0%",
+          // height: "0%"
+         },
         {
-          // display: "inline",
-          width: "77%", // Make the background width 100% of the parent
+          width: "63%", // Make the background width 100% of the parent
           duration: 0.4,
           ease: "power2.out", // Smooth easing for the background expansion
         }
@@ -66,12 +65,7 @@ export const HeroAnim = (
           ease: "none", // No easing for text typing effect
         }
       )
-      // Animating image
-      .fromTo(
-        imageRef.current,
-        { opacity: 0, scale: 0.8 },
-        { opacity: 1, scale: 1, duration: 1, ease: "power2.inOut" }
-      )
+
       // Animating buttons
       .fromTo(
         buttonRef.current,

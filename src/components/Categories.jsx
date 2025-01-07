@@ -1,6 +1,6 @@
 import React from 'react'
 import { Course_Card } from "./Course_Card";
-import { Categories_Content } from '../lib/constant';
+import { Categories_Content } from '../app/lib/constant';
 
 const Categories = () => {
   // const data = Categories_Content;
