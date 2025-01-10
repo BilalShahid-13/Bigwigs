@@ -31,7 +31,7 @@ function Content() {
         ref={headlineRef}
       >
         Unlock Your Potential with
-        <span className="text-[#00ADB5] font-bold"> &nbsp; Bigwigs</span> English
+        <span className="text-[#ef233c] font-bold"> &nbsp; Bigwigs</span> English
         Academy
       </h1>
       <h2
@@ -42,7 +42,7 @@ function Content() {
       >
         Master &nbsp;
         <span
-          className="bg-[#00ADB5] text-lg px-2 py-1 text-center
+          className="bg-[#d00000] text-lg px-2 py-1 text-center
            rounded-sm inline-block max-sm:text-xs dark:text-slate-50 text-zinc-900"
           ref={highlightedRef}
         >
@@ -60,15 +60,15 @@ function Content() {
         ref={buttonRef}
       >
         <button
-          className="bg-[#79D7BE] text-white py-2 px-4
-            rounded-md hover:bg-[#00adb5] active:bg-teal-400 transition-all ease-in duration-150
+          className="bg-[#ef233c] text-white py-2 px-4
+            rounded-md hover:bg-[#d90429] active:bg-red-700 transition-all ease-in duration-150
             max-sm:text-sm max-sm:w-full"
           aria-label="Enroll Now"
         >
           Enroll Now
         </button>
         <button
-          className="bg-[#F6F4F0] text-[#00ADB5] py-2 px-4
+          className="bg-[#F6F4F0] text-[#ef233c] py-2 px-4
             rounded-md hover:bg-[#393E46] hover:text-white active:bg-[#222831]
             transition-all ease-in duration-150
             max-sm:text-sm max-sm:w-full"

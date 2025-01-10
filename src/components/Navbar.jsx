@@ -135,21 +135,19 @@ export const Navbar = () => {
 
         {/* Center */}
         <MiddleNavbar />
-        {/* {!mobileView ? (
-        ) : (
-          <MobileNavbar />
-
-        )} */}
 
         {/* Right */}
         {!mobileView && (
 
           <div className="flex flex-row justify-center items-center gap-3" ref={rightRef}>
             <ModeToggle />
-            <button className="hover:bg-violet-500 border-2 transition-standard active:bg-violet-600 border-violet-400 rounded-md px-3 py-1 hover:text-slate-200">
+            <button className="hover:bg-[#ef233c] border-2 transition-standard active:bg-red-600 border-[#ef233c] rounded-md px-3 py-1 hover:text-slate-200">
               Enroll Now
             </button>
-            <button className="bg-indigo-500 hover:bg-indigo-600 border-2 text-white transition-standard active:bg-indigo-700 active:border-indigo-800 border-indigo-400 rounded-md px-3 py-1 hover:text-slate-200">
+            <button className="bg-[#ff4d6d] hover:bg-red-600
+            border-2 text-white transition-standard
+             active:bg-red-700 active:border-red-600 border-[#ef233c]
+             rounded-md px-3 py-1 hover:text-slate-200">
               Book a Free Demo
             </button>
 

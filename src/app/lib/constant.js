@@ -75,4 +75,52 @@ const NavbarItems = [
   { icon: HiOutlinePhone, name: "Contact Us", link: "/contact" },
 ];
 
-export { Categories_Content, NavbarItems };
+const reviews = [
+  "marquee/4797.jpg",
+  "marquee/18011.jpg",
+  "marquee/26843.jpg",
+  "marquee/53807.jpg",
+  "marquee/77463.jpg",
+  "marquee/2147657078.jpg",
+  "marquee/2148225295.jpg",
+  "marquee/2148522213.jpg",
+  "marquee/2149455156.jpg",
+];
+
+const firstRow = reviews.slice(0, reviews.length / 2);
+const secondRow = reviews.slice(reviews.length / 2);
+
+const SplashScreenHeadlines = [
+  {
+    headline: "Be Your Best in IELTS and PTE",
+    subheadline:
+      "Achieve your dream scores and unlock global opportunities with our expert-led preparation.",
+  },
+  {
+    headline: "Your Pathway to Success: IELTS and PTE",
+    subheadline: "Join the academy that helps you excel in both IELTS and PTE.",
+  },
+  {
+    headline: "Dream Big, Score High: Excel in IELTS and PTE",
+    subheadline:
+      "Prepare with the best and achieve your academic and professional goals.",
+  },
+  {
+    headline: "Unlock Your Global Dreams with IELTS and PTE",
+    subheadline:
+      "Achieve your desired scores and open doors to top universities and careers worldwide.",
+  },
+  {
+    headline: "From Preparation to Perfection: Conquer IELTS and PTE",
+    subheadline:
+      "Get expert guidance, practice tests, and strategies to succeed in both exams.",
+  },
+];
+
+export {
+  Categories_Content,
+  NavbarItems,
+  firstRow,
+  secondRow,
+  SplashScreenHeadlines,
+};

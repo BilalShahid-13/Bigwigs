@@ -38,13 +38,13 @@ const ReviewCard = React.memo(({ img }) => {
   );
 });
 
-export function MarqueeDemo() {
+export function MarqueeDemo({children}) {
   return (
     <div className="relative flex flex-col h-[500px] w-full overflow-hidden rounded-lg
     max-sm:justify-center max-sm:items-center ">
       <Marquee className="[--duration:70s]">
-        {firstRow.map((review, index) => (
-          <ReviewCard key={index} img={review} />
+        {firstRow.map((imgs, index) => (
+          <ReviewCard key={index} img={imgs} />
         ))}
       </Marquee>
       <Marquee reverse className="[--duration:70s]">
