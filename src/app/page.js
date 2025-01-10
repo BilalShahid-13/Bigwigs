@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { SplashScreenHeadlines } from "./lib/constant";
 import Hero from "./sections/Hero";
 import { VerticleMarquee } from "./sections/VerticleMarquee";
+import MainHeadline from "./sections/MainHeadline";
 
 export default function Home() {
   const [headlineData, setHeadlineData] = useState({
@@ -35,6 +36,7 @@ export default function Home() {
       {!isSplashVisible && (
         <>
           <Hero />
+          <MainHeadline />
           <VerticleMarquee />
           {/* <Categories /> */}
         </>

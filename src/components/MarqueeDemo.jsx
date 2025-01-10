@@ -38,16 +38,23 @@ const ReviewCard = React.memo(({ img }) => {
   );
 });
 
-export function MarqueeDemo({children}) {
+export function MarqueeDemo({ children }) {
   return (
     <div className="relative flex flex-col h-[500px] w-full overflow-hidden rounded-lg
     max-sm:justify-center max-sm:items-center ">
-      <Marquee className="[--duration:70s]">
+      <Marquee className="[--duration:70s]" pauseOnHover>
         {firstRow.map((imgs, index) => (
           <ReviewCard key={index} img={imgs} />
         ))}
       </Marquee>
-      <Marquee reverse className="[--duration:70s]">
+      <h1
+        className="text-4xl max-sm:text-xl dark:text-slate-50 text-zinc-900
+        font-semibold font-montserrat leading-tight text-center mx-3"
+      >
+        Master English and Open Doors to  Top Universities Like
+        <span className="text-[#ef233c] font-bold">  Harvard and Oxford</span>
+      </h1>
+      <Marquee reverse className="[--duration:70s]" pauseOnHover>
         {secondRow.map((review, index) => (
           <ReviewCard key={index} img={review} />
         ))}
